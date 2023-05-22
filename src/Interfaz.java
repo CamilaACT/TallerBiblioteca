@@ -32,8 +32,12 @@ public Interfaz(String title) {
     btnIngresar.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            bl.addLibro(new Libro(txtNombre.getText(),Integer.parseInt(txtNumPaginas.getText())));
-            txtImprimirlISTA.setText(bl.toString());
+            if(bl.addLibro(new Libro(txtNombre.getText(),Integer.parseInt(txtNumPaginas.getText())))){
+                txtImprimirlISTA.setText(bl.toString());
+            }else{
+                txtImprimirlISTA.setText("No hay como agregar el libro");
+            }
+
         }
     });
     btnQuemar.addActionListener(new ActionListener() {
