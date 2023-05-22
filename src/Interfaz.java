@@ -41,6 +41,7 @@ public Interfaz(String title) {
         public void actionPerformed(ActionEvent e) {
             bl.QuemarDatos();
             txtImprimirlISTA.setText(bl.toString());
+            btnQuemar.setEnabled(false);
         }
     });
     btnEliminarporNombre.addActionListener(new ActionListener() {
